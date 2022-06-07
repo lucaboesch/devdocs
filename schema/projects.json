@@ -1,7 +1,7 @@
 {
     "title": "JSON schema for the Moodle Project list",
-    "$schema": "http://json-schema.org/draft-04/schema",
-    "$id": "https://moodle.github.io/devdocs/schema/projects.json",
+    "$id": "https://moodledev.io/devdocs/schema/projects.json",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
     "type": "object",
     "properties": {
         "projects": {
@@ -34,16 +34,16 @@
             "additionalProperties": false,
             "unevaluatedProperties": false
         },
-        "discussionLink": {
+        "link": {
             "type": "object",
             "properties": {
                 "link": {
                     "type": "string",
-                    "description": "The link to the discussion"
+                    "description": "The link"
                 },
                 "title": {
                     "type": "string",
-                    "description": "A summary title of the discussion"
+                    "description": "A summary title of the content in the link"
                 }
             },
             "additionalProperties": false,
@@ -74,7 +74,13 @@
                 "discussionLinks": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/$defs/discussionLink"
+                        "$ref": "#/$defs/link"
+                    }
+                },
+                "issueLinks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/link"
                     }
                 }
             },
